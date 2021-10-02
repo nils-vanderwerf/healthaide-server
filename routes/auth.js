@@ -1,9 +1,9 @@
 const express = require("express");
-import { showMessage } from "../controllers/auth";
+import { currentUser } from "../controllers/auth";
 
 const router = express.Router();
 
 // Routes
-router.get('/:message', showMessage)
+router.get('/current-user', currentUser)
 
 module.exports = router;
