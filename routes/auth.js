@@ -1,10 +1,9 @@
-const express = require("express")
+const express = require("express");
+import { showMessage } from "../controllers/auth";
 
 const router = express.Router();
 
 // Routes
-router.get('/:message', (req, res) => {
-    res.status(200).send(`Your message is recieved baby ${req.params.message}`)
-})
+router.get('/:message', showMessage)
 
 module.exports = router;

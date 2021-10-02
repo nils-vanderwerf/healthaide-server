@@ -11,14 +11,15 @@ const app = express()
 mongoose.connect(process.env.DATABASE, {
     useNewUrlParser: true,
 })
-    .then(() => console.log("DB CONNECTED"))
-    .catch(error => console.error("DB CONNECTION ERROR", error))
+.then(() => console.log("DB CONNECTED"))
+.catch(error => console.error("DB CONNECTION ERROR", error))
 
 
 //middleware
 app.use(cors())
 app.use(morgan("dev"))
 readdirSync("./routes").map((r) => app.use("/api", require(`./routes/${r}`)));
+// readdirSync("./routes").map((r) => app.use("/api", require(`./routes/${r}`)));
 
 
 const port = process.env.PORT || 8000
