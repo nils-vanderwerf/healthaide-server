@@ -11,8 +11,8 @@ const app = express()
 mongoose.connect(process.env.DATABASE, {
     useNewUrlParser: true,
 })
-.then(() => console.log("DB CONNECTED"))
-.catch(error => console.error("DB CONNECTION ERROR", error))
+    .then(() => console.log("DB CONNECTED"))
+    .catch(error => console.error("DB CONNECTION ERROR", error))
 
 
 //middleware

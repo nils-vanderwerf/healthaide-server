@@ -4,6 +4,6 @@ import { currentUser } from "../controllers/auth";
 const router = express.Router();
 
 // Routes
-router.get('/current-user', currentUser)
+router.post('/current-user', currentUser)
 
 module.exports = router;
